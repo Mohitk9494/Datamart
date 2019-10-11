@@ -1,0 +1,115 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 53px;
+    width: 100%;
+    background: #005EB8;
+    color: white;
+    text-align: center;
+    height: 70px;
+    font-size: 25px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 64px;
+    width: 100%;
+    background: #005EB8;
+    color: white;
+    text-align: left;
+    font-size: 25px;
+    height: 75px;
+}
+
+#myInput {
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 348%;
+    font-size: 20px;
+    padding: 12px 20px 12px 40px;
+    border: 2px solid #dddd;
+    margin-bottom: 12px;
+    top: 80px;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 143px;
+}
+
+    #myUL li a {
+        border: 1px solid #ddd;
+        margin-top: -1px; /* Prevent double borders */
+        background-color: #768692;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: block;
+        width: 350%;
+    }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }

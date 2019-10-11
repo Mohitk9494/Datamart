@@ -1,0 +1,83 @@
+<div class="container" style="padding-left: 99px;
+padding-right: 142px;">
+  <h1>Part Search</h1>
+</div>
+<form [formGroup]="partSearchService.partSearchForm" class="normal-form" style="padding-left: 99px;
+padding-right: 142px;">
+    <mat-grid-list cols="2" rowHeight="300px">
+      <mat-grid-tile>
+        <div class="control-container">
+          <!-- <input type="hidden" formControlName="$key" /> -->
+            
+          <mat-form-field style="font-weight:bold;">
+            <input 
+              formControlName="partNumber"
+              matInput
+              id="partnumber"
+              matTooltip="Please enter full name"
+              placeholder="Part Number"
+            />            
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="legacyPartNumber" matInput placeholder="Legacy Part Number" />         
+          </mat-form-field>
+          <mat-form-field>
+              <mat-select fromControlName="partStatus" placeholder="Part Status">
+                <mat-option>None</mat-option>
+                <ng-container *ngFor="let dep of Departments">
+                  <mat-option value="dep.id">{{ dep.value }}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          <mat-form-field>
+            <input formControlNmae="partDescription" matInput placeholder="Part Description" />
+          </mat-form-field>
+          <div class="button-row add-bottom-padding">
+              <div style="padding-right: 479px;">        
+                <button mat-raised-button color="warn" (click)="onClear()" style="    width: 111px;
+                margin-left: 63px;color: black;background: white;box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.26);">
+                    Clear
+                  </button>
+              </div>
+              <div
+                style="padding-left: 88%;
+                margin-top: -45px;"
+              >
+              <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="partSearchService.partSearchForm.invalid"
+             style="      margin-left: -62px;  width: 100px;background: #005eb8;color: white;
+            box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.26);">
+              Submit
+            </button> 
+              </div>
+            </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile style="margin-top: -57px;">
+        <div class="control-container add-bottom-padding">
+            <mat-form-field>
+                <input formControlName="documentNumber" matInput placeholder="Document Number" />         
+              </mat-form-field>
+
+              <mat-form-field>
+                  <input formControlName="legacyDocumentNumber" matInput placeholder="Legacy Document Number" />         
+                </mat-form-field>
+                <label>Part Type</label>
+          <mat-form-field>
+            <mat-select fromControlName="partType" placeholder="Part Type">
+              <mat-option>None</mat-option>
+              <ng-container *ngFor="let dep of Departments">
+                <mat-option value="dep.id">{{ dep.value }}</mat-option>
+              </ng-container>
+            </mat-select>
+          </mat-form-field>        
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </form>
+
+  
